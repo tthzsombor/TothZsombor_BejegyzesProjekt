@@ -20,7 +20,8 @@ namespace TothZsombor_BejegyzesProjekt
            bejegyzes = new List<Bejegyzes>();
            Beker();
            Beolvas();
-            Likekiosztas();
+           Likekiosztas();
+           Bejegyzesmodositas();
         }
 
         public void Beker()
@@ -77,6 +78,16 @@ namespace TothZsombor_BejegyzesProjekt
             {
                 Console.WriteLine(beir[i].ToString());
             }
+        }
+
+        private void Bejegyzesmodositas()
+        {
+            Console.WriteLine("Adjon meg egy bejegyzés szöveget: ");
+            string ujbejegyzes = Console.ReadLine();
+
+            bejegyzes[1].Tartalom=ujbejegyzes;
+
+           
         }
 
     }
