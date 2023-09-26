@@ -10,6 +10,8 @@ namespace TothZsombor_BejegyzesProjekt
     {
         static void Main(string[] args)
         {
+            Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
