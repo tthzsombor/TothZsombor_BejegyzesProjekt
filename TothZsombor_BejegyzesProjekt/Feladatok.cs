@@ -24,6 +24,9 @@ namespace TothZsombor_BejegyzesProjekt
            Bejegyzesmodositas();
            Kiir();
            Legnepszerubb();
+           Liketobbmint();
+           Kevesebblike();
+
         }
 
         public void Beker()
@@ -95,33 +98,44 @@ namespace TothZsombor_BejegyzesProjekt
 
         private void Kiir()
         {
-            for (int i = 0; i < bejegyzes.Count; i++)
+            for (int i = 0; i < beir.Count; i++)
             {
-                Console.WriteLine(bejegyzes[i]);
+                Console.WriteLine(beir[i]);
             }
         }
 
         private void Legnepszerubb()
         {
             int max = int.MinValue;
-            for (int i = 0; i < bejegyzes.Count; i++)
+            int index = -1;
+            for (int i = 0; i < beir.Count; i++)
             {
-                if (bejegyzes[i].Likeok>max)
+                if (beir[i].Likeok>max)
                 {
-                    max = bejegyzes[i].Likeok;
+                    max = beir[i].Likeok;
+                    index= i;
                 }
             }
-            Console.WriteLine(max);
+            Console.WriteLine(beir[index].Likeok);
         }
 
         private void Liketobbmint()
         {
-            for (int i = 0; i < bejegyzes.Count; i++)
+            int darab = 0;
+            for (int i = 0; i < beir.Count; i++)
             {
-                if (bejegyzes[i].Likeok>35)
+                if (beir[i].Likeok>35)
                 {
-                    Console.WriteLine(bejegyzes[i]);
+                    darab++;
                 }
+            }
+            if (darab>0)
+            {
+                Console.WriteLine("35-nél több likos posztok száma: {0}", darab);
+            }
+            else
+            {
+                Console.WriteLine("Nincs olyan poszt, ami 35 likenél nagyobb. ");
             }
         }
 
@@ -129,14 +143,30 @@ namespace TothZsombor_BejegyzesProjekt
         {
             int darab = 0;
 
-            for (int i = 0; i < bejegyzes.Count; i++)
+            for (int i = 0; i < beir.Count; i++)
             {
-                if (bejegyzes[i].Likeok<15)
+                if (beir[i].Likeok<15)
                 {
                     darab++;
                 }
             }
             Console.WriteLine(darab);
+        }
+
+        private void Csokkeno()
+        {
+            for (int i = 0; i < beir.Count; i++)
+            {
+                for (int j = 0; j < beir.Count; j++)
+                {
+                    if (beir[i].Likeok > beir[j].Likeok)
+                    {
+                        Bejegyzes valtozo = beir[i];
+                        beir[i] = beir[j];
+                        beir[j] = valtozo;
+                    }
+                }
+            }
         }
 
     }
