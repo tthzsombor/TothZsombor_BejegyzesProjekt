@@ -20,6 +20,7 @@ namespace TothZsombor_BejegyzesProjekt
            bejegyzes = new List<Bejegyzes>();
            Beker();
            Beolvas();
+            Likekiosztas();
         }
 
         public void Beker()
@@ -59,6 +60,22 @@ namespace TothZsombor_BejegyzesProjekt
 
 
 
+            }
+        }
+
+        private void Likekiosztas()
+        {
+            Random r= new Random();
+            int szam = 0;
+            for (int i = 0; i < beir.Count*20; i++)
+            {
+                szam=r.Next(0, beir.Count);
+                beir[szam].Like();
+
+            }
+            for (int i = 0;i < beir.Count;i++)
+            {
+                Console.WriteLine(beir[i].ToString());
             }
         }
 
