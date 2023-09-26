@@ -22,6 +22,8 @@ namespace TothZsombor_BejegyzesProjekt
            Beolvas();
            Likekiosztas();
            Bejegyzesmodositas();
+           Kiir();
+           Legnepszerubb();
         }
 
         public void Beker()
@@ -88,6 +90,39 @@ namespace TothZsombor_BejegyzesProjekt
             bejegyzes[1].Tartalom=ujbejegyzes;
 
            
+        }
+
+
+        private void Kiir()
+        {
+            for (int i = 0; i < bejegyzes.Count; i++)
+            {
+                Console.WriteLine(bejegyzes[i]);
+            }
+        }
+
+        private void Legnepszerubb()
+        {
+            int max = int.MinValue;
+            for (int i = 0; i < bejegyzes.Count; i++)
+            {
+                if (bejegyzes[i].Likeok>max)
+                {
+                    max = bejegyzes[i].Likeok;
+                }
+            }
+            Console.WriteLine(max);
+        }
+
+        private void Liketobbmint()
+        {
+            for (int i = 0; i < bejegyzes.Count; i++)
+            {
+                if (bejegyzes[i].Likeok>35)
+                {
+                    Console.WriteLine(bejegyzes[i]);
+                }
+            }
         }
 
     }
