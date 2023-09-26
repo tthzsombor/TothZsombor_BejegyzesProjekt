@@ -18,8 +18,7 @@ namespace TothZsombor_BejegyzesProjekt
         private int likeok;
         private DateTime letrejott=new DateTime();
         private DateTime szerkesztve=new DateTime();
-        private List<Bejegyzes> bejegyzes;
-        private List<Bejegyzes> beir;
+     
 
         public Bejegyzes(string szerzo, string tartalom)
         {
@@ -63,39 +62,7 @@ namespace TothZsombor_BejegyzesProjekt
 
         }
 
-        public void Beker()
-        {
-           
-            Console.Write("Adjon meg egy számot: ");
-            int szam=int.Parse(Console.ReadLine());
-            if (szam%1!=0)
-            {
-                Console.WriteLine("Természetes számot adjon meg");
-            }
-            else
-            {
-                for (int i = 0; i < szam; i++)
-                {
-                    Console.Write("Adja meg a bejegyzés szerzőjét: ");
-                    string szerzo = Console.ReadLine();
-                    Console.Write("Adja meg a bejegyzés tartalmát: ");
-                    string tartalom = Console.ReadLine();
-                    Bejegyzes b1=new Bejegyzes(szerzo, tartalom);
-                    beir.Add(b1);
-                }
-            }
-        }
-
-        private void Beolvas()
-        {
-            StreamReader sr=new StreamReader("bejegyzesek.cvs");
-            while(!sr.EndOfStream)
-            {
-                string sor=sr.ReadLine();
-
-            }
-        }
-
+       
 
 
 
