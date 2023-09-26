@@ -125,5 +125,19 @@ namespace TothZsombor_BejegyzesProjekt
             }
         }
 
+        private void Kevesebblike()
+        {
+            int darab = 0;
+
+            for (int i = 0; i < bejegyzes.Count; i++)
+            {
+                if (bejegyzes[i].Likeok<15)
+                {
+                    darab++;
+                }
+            }
+            Console.WriteLine(darab);
+        }
+
     }
 }
