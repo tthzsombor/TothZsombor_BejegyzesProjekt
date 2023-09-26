@@ -8,6 +8,10 @@ namespace TothZsombor_BejegyzesProjekt
 {
     internal class Bejegyzes
     {
+        private List<Bejegyzes>lista1=new List<Bejegyzes>();
+        private List<Bejegyzes> lista2 = new List<Bejegyzes>();
+
+
         private string szerzo;
         private string tartalom;
         private int likeok;
